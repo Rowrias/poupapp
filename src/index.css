@@ -1,26 +1,17 @@
-:root {
-  /* Neutral colors */
-  --neutral-darker: #1C1D21;
-  --neutral-background: #212229;
-  --neutral-surface: #2A2C34;
-  --neutral-header: #33353F;
-  --neutral-text: #F5F5F5;
+@import "tailwindcss";
 
-  /* Primary colors */
-  --primary-highlight: #7693FF;
+@theme {
+    /* Neutral colors */
+    --color-neutral-darker: #1C1D21;
+    --color-neutral-background: #212229;
+    --color-neutral-surface: #2A2C34;
+    --color-neutral-header: #33353F;
+    --color-neutral-text: #F5F5F5;
 
-  /* Secondary colors */
-  --secondary-income: #D6FF62;
-  --secondary-expense: #F87828;
-}
+    /* Primary colors */
+    --color-primary-highlight: #7693FF;
 
-* {
-  font-family: "Work Sans", sans-serif;
-  font-optical-sizing: auto;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background-color: var(--neutral-background);
+    /* Secondary colors */
+    --color-secondary-income: #D6FF62;
+    --color-secondary-expense: #F87828;
 }
