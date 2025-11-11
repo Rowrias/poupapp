@@ -1,18 +1,22 @@
 import { Aside } from './components/Aside'
+import Card from './components/Card'
 import { Container } from './components/Container'
 import { DailyBudget } from './components/DailyBudget'
 import { Main } from './components/Main'
+import { SavingStatus } from './components/SavingsStatus'
 import { Searchinput } from './components/SearchInput'
 import { Typography } from './components/Typography'
-import Card from './components/Card'
 
 function App() {
 
   return (
     <Container>
+
       <Aside />
+
       <Main>
         <Searchinput />
+        
         <div>
           <Typography variant="h1">
             Olá, Vinny!
@@ -21,6 +25,7 @@ function App() {
             Veja como estão suas finanças hoje.
           </Typography>
         </div>
+
         <section>
           <Card>
             <Card.Header>
@@ -30,16 +35,37 @@ function App() {
               <DailyBudget value={250} />
             </Card.Body>
           </Card>
+
+          <Card>
+            <Card.Header>
+              Progresso da meta financeira
+            </Card.Header>
+            <Card.Body>
+              <SavingStatus percent={70} />
+            </Card.Body>
+          </Card>
+
           <Card>
             <Card.Header>
               Orçamento diário disponível:
             </Card.Header>
             <Card.Body>
-              R$ 200
+              <DailyBudget value={250} />
+            </Card.Body>
+          </Card>
+
+          <Card>
+            <Card.Header>
+              Minhas contas
+            </Card.Header>
+            <Card.Body>
+              <DailyBudget value={250} />
             </Card.Body>
           </Card>
         </section>
+
       </Main>
+
     </Container>
   )
 }
