@@ -5,7 +5,10 @@ import { DailyBudget } from './components/DailyBudget'
 import { Main } from './components/Main'
 import { SavingStatus } from './components/SavingsStatus'
 import { Searchinput } from './components/SearchInput'
+import { Transactions } from './components/Transactions'
 import { Typography } from './components/Typography'
+
+import styles from './app.module.css'
 
 function App() {
 
@@ -15,55 +18,59 @@ function App() {
       <Aside />
 
       <Main>
-        <Searchinput />
-        
-        <div>
-          <Typography variant="h1">
-            Olá, Vinny!
-          </Typography>
-          <Typography variant="body">
-            Veja como estão suas finanças hoje.
-          </Typography>
+        <div className={styles.container}>
+          <Searchinput />
+          
+          <div>
+            <Typography variant="h1">
+              Olá, Vinny!
+            </Typography>
+            <Typography variant="body">
+              Veja como estão suas finanças hoje.
+            </Typography>
+          </div>
+
+          <section className={styles.grid}>
+            <Card>
+              <Card.Header>
+                Orçamento diário disponível:
+              </Card.Header>
+              <Card.Body>
+                <DailyBudget value={250} />
+              </Card.Body>
+            </Card>
+
+            <Card>
+              <Card.Header>
+                Progresso da meta financeira
+              </Card.Header>
+              <Card.Body>
+                <SavingStatus percent={70} />
+              </Card.Body>
+            </Card>
+
+            <Card>
+              <Card.Header>
+                Orçamento diário disponível:
+              </Card.Header>
+              <Card.Body>
+                <Transactions />
+              </Card.Body>
+            </Card>
+
+            <Card>
+              <Card.Header>
+                Minhas contas
+              </Card.Header>
+              <Card.Body>
+                <DailyBudget value={250} />
+                <DailyBudget value={250} />
+                <DailyBudget value={250} />
+                <DailyBudget value={250} />
+              </Card.Body>
+            </Card>
+          </section>
         </div>
-
-        <section>
-          <Card>
-            <Card.Header>
-              Orçamento diário disponível:
-            </Card.Header>
-            <Card.Body>
-              <DailyBudget value={250} />
-            </Card.Body>
-          </Card>
-
-          <Card>
-            <Card.Header>
-              Progresso da meta financeira
-            </Card.Header>
-            <Card.Body>
-              <SavingStatus percent={70} />
-            </Card.Body>
-          </Card>
-
-          <Card>
-            <Card.Header>
-              Orçamento diário disponível:
-            </Card.Header>
-            <Card.Body>
-              <DailyBudget value={250} />
-            </Card.Body>
-          </Card>
-
-          <Card>
-            <Card.Header>
-              Minhas contas
-            </Card.Header>
-            <Card.Body>
-              <DailyBudget value={250} />
-            </Card.Body>
-          </Card>
-        </section>
-
       </Main>
 
     </Container>
