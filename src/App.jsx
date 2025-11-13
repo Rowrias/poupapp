@@ -1,3 +1,4 @@
+import { Accounts } from './components/Accounts'
 import { Aside } from './components/Aside'
 import Card from './components/Card'
 import { Container } from './components/Container'
@@ -23,7 +24,7 @@ function App() {
           
           <div>
             <Typography variant="h1">
-              Olá, Vinny!
+              Olá, Rodrigo!
             </Typography>
             <Typography variant="body">
               Veja como estão suas finanças hoje.
@@ -63,10 +64,7 @@ function App() {
                 Minhas contas
               </Card.Header>
               <Card.Body>
-                <DailyBudget value={250} />
-                <DailyBudget value={250} />
-                <DailyBudget value={250} />
-                <DailyBudget value={250} />
+                <Accounts />
               </Card.Body>
             </Card>
           </section>
